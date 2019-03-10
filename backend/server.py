@@ -42,7 +42,7 @@ class Server(BaseHTTPRequestHandler):
         
 
 def predict(inp):
-    sentences = inp.split('.')
+    sentences = inp.split('.')[:-1]
     out = ''
     text_so_far = ""
     for s in sentences:
