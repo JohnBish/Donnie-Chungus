@@ -26,6 +26,9 @@ pip install -r requirements.txt
 
 Start the backend server:
 
-`python backend/server.py`
+````
+cd backend/
+python server.py
+````
 
-Access the frontend at (https://donnie-chungus.firebaseapp.com).
+Access the frontend at (https://donnie-chungus.firebaseapp.com). Text will be inserted in every sentence (so you'll need at least one period).
