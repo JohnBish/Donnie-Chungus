@@ -42,14 +42,13 @@ class Server(BaseHTTPRequestHandler):
         
 
 def predict(inp):
-    words = inp.split(' ')
-    out = words[0] + ' '
+    sentences = inp.split('.')
+    out = ''
     text_so_far = ""
-    for w in words:
-        text_so_far += w + ' '
+    for s in sentences:
         with Capturing() as outtext:
-            textgen.generate(prefix=text_so_far)
-        out += str(outtext).split(' ')[-1] + ' '
+            textgen.generate(prefix=s)
+        out += str(outtext)[2:-3].split('.')[0] + '. '
     print(bytes(str(out).encode('utf-8')))
     return bytes(str(out).encode('utf-8'))
     pass
